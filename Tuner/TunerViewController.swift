@@ -11,18 +11,21 @@ import UIKit
 
 class TunerViewController: UIViewController {
 
+    @IBOutlet var amplitudeLabel: UILabel!
     private var frequency:Double?
     @IBOutlet var frequencyLabel: UILabel!
+    let noiseThreshold = 0.005
     private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Enable microphone tracking.
+        AKSettings.audioInputEnabled = true
         let mic = AKMicrophone()
         let tracker = AKFrequencyTracker(mic)
-        AKSettings.audioInputEnabled = true
-        AudioKit.output = tracker
+        let silence = AKBooster(tracker, gain: 0)
+        AudioKit.output = silence
         do {
             try AudioKit.start()
         }
@@ -37,8 +40,11 @@ class TunerViewController: UIViewController {
             [weak self] (timer) in
             guard let this = self else { return }
             
-            this.frequencyLabel.text = String(format: "Frequency: %.3f Hz", tracker.frequency)
-            this.frequencyLabel.sizeToFit()
+            if tracker.amplitude > this.noiseThreshold {
+                this.amplitudeLabel.text = String(format: "Amplitude: %.6f", tracker.amplitude)
+                this.frequencyLabel.text = String(format: "Frequency: %.3f Hz", tracker.frequency)
+                this.frequencyLabel.sizeToFit()
+            }
         }
     }
 

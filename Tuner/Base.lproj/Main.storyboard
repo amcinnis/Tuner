@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency: null" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY5-9w-ilR">
-                                <rect key="frame" x="16" y="145" width="338" height="21"/>
+                                <rect key="frame" x="129" y="323" width="117" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VPI-h9-cvn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amplitude: null" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lN-9I-ncg">
+                                <rect key="frame" x="129" y="254" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,14 +36,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HY5-9w-ilR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="1bQ-zr-5p4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HY5-9w-ilR" secondAttribute="trailing" constant="21" id="BAZ-Vw-zC0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HY5-9w-ilR" secondAttribute="bottom" constant="501" id="GF3-Sa-qQb"/>
-                            <constraint firstItem="HY5-9w-ilR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IlV-05-xzX"/>
+                            <constraint firstItem="HY5-9w-ilR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3UR-IQ-hf2"/>
+                            <constraint firstItem="6lN-9I-ncg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="234" id="6oZ-zr-RSu"/>
+                            <constraint firstItem="6lN-9I-ncg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dMM-Jo-pJS"/>
+                            <constraint firstItem="6lN-9I-ncg" firstAttribute="leading" secondItem="HY5-9w-ilR" secondAttribute="leading" id="gOf-bG-VE0"/>
+                            <constraint firstItem="HY5-9w-ilR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gjf-go-vJi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="amplitudeLabel" destination="6lN-9I-ncg" id="z6N-jj-5zB"/>
                         <outlet property="frequencyLabel" destination="HY5-9w-ilR" id="Nx4-wB-m07"/>
                     </connections>
                 </viewController>
