@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency: null" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY5-9w-ilR">
-                                <rect key="frame" x="129" y="323" width="117" height="21"/>
+                                <rect key="frame" x="129" y="321" width="117" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VPI-h9-cvn"/>
                                 </constraints>
@@ -28,7 +28,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amplitude: null" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lN-9I-ncg">
-                                <rect key="frame" x="129" y="254" width="117" height="21"/>
+                                <rect key="frame" x="130.5" y="241" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: Error!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-RX-Ngu">
+                                <rect key="frame" x="143.5" y="395" width="88.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Octave: Error!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7w-3a-zuQ">
+                                <rect key="frame" x="134.5" y="464" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,17 +48,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HY5-9w-ilR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3UR-IQ-hf2"/>
-                            <constraint firstItem="6lN-9I-ncg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="234" id="6oZ-zr-RSu"/>
+                            <constraint firstItem="6lN-9I-ncg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="221" id="6oZ-zr-RSu"/>
+                            <constraint firstItem="8Aj-RX-Ngu" firstAttribute="top" secondItem="HY5-9w-ilR" secondAttribute="bottom" constant="53" id="9d9-0Y-69Y"/>
+                            <constraint firstItem="W7w-3a-zuQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L6y-e2-PQL"/>
+                            <constraint firstItem="8Aj-RX-Ngu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bnK-qM-bBw"/>
                             <constraint firstItem="6lN-9I-ncg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dMM-Jo-pJS"/>
-                            <constraint firstItem="6lN-9I-ncg" firstAttribute="leading" secondItem="HY5-9w-ilR" secondAttribute="leading" id="gOf-bG-VE0"/>
+                            <constraint firstItem="W7w-3a-zuQ" firstAttribute="top" secondItem="8Aj-RX-Ngu" secondAttribute="bottom" constant="48" id="gOR-gc-lMU"/>
                             <constraint firstItem="HY5-9w-ilR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gjf-go-vJi"/>
+                            <constraint firstItem="HY5-9w-ilR" firstAttribute="top" secondItem="6lN-9I-ncg" secondAttribute="bottom" constant="59" id="lfD-Az-vuR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="amplitudeLabel" destination="6lN-9I-ncg" id="z6N-jj-5zB"/>
                         <outlet property="frequencyLabel" destination="HY5-9w-ilR" id="Nx4-wB-m07"/>
+                        <outlet property="noteLabel" destination="8Aj-RX-Ngu" id="JSQ-Oq-i1L"/>
+                        <outlet property="octaveLabel" destination="W7w-3a-zuQ" id="pV6-FI-bOt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

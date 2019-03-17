@@ -12,9 +12,12 @@ import UIKit
 class TunerViewController: UIViewController {
 
     @IBOutlet var amplitudeLabel: UILabel!
-    private var frequency:Double?
     @IBOutlet var frequencyLabel: UILabel!
-    let noiseThreshold = 0.005
+    @IBOutlet var noteLabel: UILabel!
+    @IBOutlet var octaveLabel: UILabel!
+    
+    private var frequency:Double?
+    static let noiseThreshold = 0.005
     private var timer: Timer?
     
     override func viewDidLoad() {
@@ -24,8 +27,12 @@ class TunerViewController: UIViewController {
         AKSettings.audioInputEnabled = true
         let mic = AKMicrophone()
         let tracker = AKFrequencyTracker(mic)
+        
+        //Disable audio output
         let silence = AKBooster(tracker, gain: 0)
         AudioKit.output = silence
+        
+        //Start
         do {
             try AudioKit.start()
         }
@@ -40,10 +47,17 @@ class TunerViewController: UIViewController {
             [weak self] (timer) in
             guard let this = self else { return }
             
-            if tracker.amplitude > this.noiseThreshold {
+            if tracker.amplitude > TunerViewController.noiseThreshold {
                 this.amplitudeLabel.text = String(format: "Amplitude: %.6f", tracker.amplitude)
                 this.frequencyLabel.text = String(format: "Frequency: %.3f Hz", tracker.frequency)
-                this.frequencyLabel.sizeToFit()
+                if let pitch = try? getPitch(from: tracker.frequency) {
+                    this.noteLabel.text = "Note: \(pitch.note.description)"
+                    this.octaveLabel.text = "Octave: \(pitch.octave)"
+                }
+                else {
+                    this.noteLabel.text = "Note: Error!"
+                    this.octaveLabel.text = "Octave: Error!"
+                }
             }
         }
     }
@@ -56,10 +70,4 @@ class TunerViewController: UIViewController {
             print("Did not invalidate timer")
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

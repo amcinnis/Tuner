@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		751D9C58F319C5B00030EE0A /* Pods_Tuner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE78C84436F29B659AF925C /* Pods_Tuner.framework */; };
+		D5285F8F223E36FB006B1E1F /* PitchCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285F8E223E36FB006B1E1F /* PitchCalc.swift */; };
+		D5285F91223E3C58006B1E1F /* TunerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5285F90223E3C58006B1E1F /* TunerError.swift */; };
 		D532AB7E213F4E0D00491B1F /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532AB7D213F4E0D00491B1F /* TunerViewController.swift */; };
 		D55F5519213E67D6007617D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F5518213E67D6007617D2 /* AppDelegate.swift */; };
 		D55F551E213E67D6007617D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55F551C213E67D6007617D2 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		3EFBBA1A0CF3481BEAE962B8 /* Pods-Tuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tuner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tuner/Pods-Tuner.release.xcconfig"; sourceTree = "<group>"; };
 		6C817ADC41B0136980AAAC69 /* Pods-Tuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tuner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tuner/Pods-Tuner.debug.xcconfig"; sourceTree = "<group>"; };
 		8FE78C84436F29B659AF925C /* Pods_Tuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tuner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5285F8E223E36FB006B1E1F /* PitchCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCalc.swift; sourceTree = "<group>"; };
+		D5285F90223E3C58006B1E1F /* TunerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerError.swift; sourceTree = "<group>"; };
 		D532AB7D213F4E0D00491B1F /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
 		D55F5515213E67D6007617D2 /* Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55F5518213E67D6007617D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				D55F5518213E67D6007617D2 /* AppDelegate.swift */,
 				D55F551C213E67D6007617D2 /* Main.storyboard */,
 				D532AB7D213F4E0D00491B1F /* TunerViewController.swift */,
+				D5285F8E223E36FB006B1E1F /* PitchCalc.swift */,
+				D5285F90223E3C58006B1E1F /* TunerError.swift */,
 				D55F551F213E67D7007617D2 /* Assets.xcassets */,
 				D55F5521213E67D7007617D2 /* LaunchScreen.storyboard */,
 				D55F5524213E67D7007617D2 /* Info.plist */,
@@ -182,7 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5285F91223E3C58006B1E1F /* TunerError.swift in Sources */,
 				D55F5519213E67D6007617D2 /* AppDelegate.swift in Sources */,
+				D5285F8F223E36FB006B1E1F /* PitchCalc.swift in Sources */,
 				D532AB7E213F4E0D00491B1F /* TunerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
